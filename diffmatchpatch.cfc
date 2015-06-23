@@ -29,9 +29,6 @@
                 //We can pass the classpath directly here
                 return createObject('java',arguments.class,arguments.classpath);
             }
-
-            
-
             $throw(type="Wheels.Unable to create java object", message="Unable to create the java object with class name: #arguments.class#. You may running on an unsupported engine.");   
         </cfscript>
     </cffunction>
@@ -56,9 +53,9 @@
     </cffunction>
 
     <cffunction name="diff_main" returntype="any" output="false">
-        <cfargument name="stringBefore" type="string" required="true"/>
-        <cfargument name="stringAfter" type="string" required="true"/>
-        <cfargument name="param1" type="any" required="false"/>
+        <cfargument name="text1" type="string" required="true"/>
+        <cfargument name="text2" type="string" required="true"/>
+        <cfargument name="param3" type="any" required="false"/>
         <cfscript>
             var loc = {};
             loc.obj = false;
@@ -71,10 +68,10 @@
                     applications.diffmatchpatch.diffmatchpatch = loc.obj;
                 }
             }
-            if(!structKeyExists(arguments, "param1")){
-                loc.diffs = applications.diffmatchpatch.diffmatchpatch.diff_main(arguments.stringBefore, arguments.stringAfter);
+            if(!structKeyExists(arguments, "param3")){
+                loc.diffs = applications.diffmatchpatch.diffmatchpatch.diff_main(arguments.text1, arguments.text2);
             }else{
-                loc.diffs = applications.diffmatchpatch.diffmatchpatch.diff_main(arguments.stringBefore, arguments.stringAfter, arguments.param1);
+                loc.diffs = applications.diffmatchpatch.diffmatchpatch.diff_main(arguments.text1, arguments.text2, arguments.param3);
             }
             
             return loc.diffs;            
@@ -83,130 +80,498 @@
 
     <!-- not implemented -->
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_commonPrefix" returntype="int">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="string"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_commonSuffix" returntype="int">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="string"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_cleanupSemantic" returntype="any">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_cleanupSemanticLossless" returntype="any">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_cleanupEfficiency" returntype="any">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_cleanupMerge" returntype="any">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_xIndex" returntype="int">
         <cfargument name="param1" type="any"/>
         <cfargument name="param2" type="int"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_text1" returntype="String">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_text2" returntype="String">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_levenshtein" returntype="int">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_toDelta" returntype="String">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="diff_fromDelta" returntype="LinkedList">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="string"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="match_main" returntype="int">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="string"/>
         <cfargument name="param3" type="int"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_make" returntype="LinkedList">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="string"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_make" returntype="LinkedList">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_make" returntype="LinkedList">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="string"/>
         <cfargument name="param3" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_make" returntype="LinkedList">
         <cfargument name="param1" type="string"/>
         <cfargument name="param2" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_deepCopy" returntype="LinkedList">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_apply" returntype="any">
         <cfargument name="param1" type="any"/>
         <cfargument name="param2" type="string"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_addPadding" returntype="string">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_splitMax" returntype="any">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_toText" returntype="string">
         <cfargument name="param1" type="any"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
+    <!--- TODO: Implement function by approach the existing examples --->
     <cffunction name="patch_fromText" returntype="any">
         <cfargument name="param1" type="string"/>
-        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the working examples."/>
+        <cfthrow message="This function is not implemented yet. It can be easily adpoted by using the existing examples."/>
+        <cfscript>
+            var loc = {};
+            loc.obj = false;
+            if(!structKeyExists(application.diffmatchpatch,"diffmatchpatch")){
+                lock timeout="20" name="diffmatchpatch"{
+                    //Let´s create the java object and initialize it
+                    loc.obj = $createNewJavaObject('name.fraser.neil.plaintext.diff_match_patch');
+                    loc.obj.init();
+                    
+                    applications.diffmatchpatch.diffmatchpatch = loc.obj;
+                }
+            }
+            //Just call the function here with the required paramenters
+            //e.g. return applications.diffmatchpatch.diffmatchpatch.diff_commonPrefix(param1, param2);
+        </cfscript>
     </cffunction>
 
 </cfcomponent>
