@@ -13,8 +13,10 @@ which is hosted at
 ```CF
 <cfscript>
 var loc = {};
-loc.diff = diff_prettyHtml(stringBefore="a", stringAfter="ab");
-loc.diff2 = diff_prettyHtml(stringBefore="ab", stringAfter="aabb");
-dump(loc);
+loc.diffs = diff_main(stringBefore="a", stringAfter="ab"); //Getting Differences
+loc.diffs2 = diff_main(stringBefore="ab", stringAfter="aabb"); //Getting Differences
+diff_cleanupSemantic(loc.diffs2); //Cleaning up and make the differences readable for humans
+writeOutput(diff_prettyHtml(loc.diffs)); //Showing the differences in HTML
+writeOutput(diff_prettyHtml(loc.diffs2)); //Showing the differences in HTML
 </cfscript>
 ``` 
