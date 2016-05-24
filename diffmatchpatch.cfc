@@ -25,7 +25,7 @@
 			}
 
 			//Now check if it is railo
-			if(structKeyExists(server,'railo') && len(arguments.classpath)){
+			if((structKeyExists(server,'railo') || structKeyExists(server,'lucee')) && len(arguments.classpath)){
 				//We can pass the classpath directly here
 				return createObject('java',arguments.class,arguments.classpath);
 			}
